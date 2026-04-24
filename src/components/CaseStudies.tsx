@@ -164,45 +164,50 @@ export default function CaseStudies() {
               const isRight  = pos === 1;
               const isLeft   = pos === total - 1;
 
-              let transform = 'translate(-50%, -50%) scale(0.82)';
-              let opacity = 0;
-              let zIndex = 0;
-
-              if (isCenter) {
-                transform = 'translate(-50%, -50%) scale(1)';
-                opacity = 1;
-                zIndex = 2;
-              } else if (isLeft) {
-                transform = 'translate(-130%, -50%) scale(0.82)';
-                opacity = 0.4;
-                zIndex = 1;
-              } else if (isRight) {
-                transform = 'translate(30%, -50%) scale(0.82)';
-                opacity = 0.4;
-                zIndex = 1;
-              }
-
               return (
-                <div
-                  key={i}
-                  onClick={() => {
-                    if (isLeft)  handleManual(() => setCurrent(prevIdx));
-                    if (isRight) handleManual(() => setCurrent(nextIdx));
-                  }}
-                  style={{
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    width: '560px',
-                    transform,
-                    opacity,
-                    zIndex,
-                    transition: 'transform 0.7s ease-in-out, opacity 0.7s ease-in-out',
-                    pointerEvents: isCenter ? 'auto' : 'none',
-                    cursor: (!isCenter && (isLeft || isRight)) ? 'pointer' : 'default',
-                  }}
-                >
-                  <StudyCard study={study} />
+                <div key={i}>
+                  {/* Desktop: 3-card layout */}
+                  <div
+                    onClick={() => {
+                      if (isLeft)  handleManual(() => setCurrent(prevIdx));
+                      if (isRight) handleManual(() => setCurrent(nextIdx));
+                    }}
+                    className="hidden sm:block"
+                    style={{
+                      position: 'absolute',
+                      top: '50%',
+                      left: '50%',
+                      width: '560px',
+                      transform: isCenter
+                        ? 'translate(-50%, -50%) scale(1)'
+                        : isLeft
+                        ? 'translate(-130%, -50%) scale(0.82)'
+                        : isRight
+                        ? 'translate(30%, -50%) scale(0.82)'
+                        : 'translate(-50%, -50%) scale(0.82)',
+                      opacity: isCenter ? 1 : (isLeft || isRight) ? 0.4 : 0,
+                      zIndex: isCenter ? 2 : (isLeft || isRight) ? 1 : 0,
+                      transition: 'transform 0.7s ease-in-out, opacity 0.7s ease-in-out',
+                      pointerEvents: isCenter ? 'auto' : 'none',
+                      cursor: (!isCenter && (isLeft || isRight)) ? 'pointer' : 'default',
+                    }}
+                  >
+                    <StudyCard study={study} />
+                  </div>
+
+                  {/* Mobile: single card crossfade */}
+                  <div
+                    className="block sm:hidden"
+                    style={{
+                      position: i === 0 ? 'relative' : 'absolute',
+                      inset: 0,
+                      opacity: isCenter ? 1 : 0,
+                      transition: 'opacity 0.7s ease-in-out',
+                      pointerEvents: isCenter ? 'auto' : 'none',
+                    }}
+                  >
+                    <StudyCard study={study} />
+                  </div>
                 </div>
               );
             })}
