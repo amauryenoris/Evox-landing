@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Calendar, Home, TrendingUp, Car, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState, useEffect, useCallback } from 'react';
+import { Calendar, Home, TrendingUp, Car, ChevronLeft, ChevronRight, Zap } from 'lucide-react';
 
 const caseStudies = [
   {
@@ -24,6 +24,18 @@ const caseStudies = [
       { label: 'Response Time', value: '10x faster' },
       { label: 'Lead Conversion', value: '+45%' },
       { label: 'Manual Work', value: '-80%' },
+    ],
+  },
+  {
+    company: 'BOI',
+    icon: Zap,
+    challenge: 'Sales process running manually — no CRM, no pipeline tracking, no follow-up automation',
+    solution: 'Full GoHighLevel CRM setup, custom sales funnel build, and end-to-end pipeline automation',
+    result: 'Structured sales process with automated follow-ups and full pipeline visibility',
+    metrics: [
+      { label: 'CRM Setup', value: '100%' },
+      { label: 'Pipeline Stages', value: 'Automated' },
+      { label: 'Follow-up Time', value: 'Zero' },
     ],
   },
   {
@@ -105,9 +117,24 @@ function StudyCard({ study }: { study: typeof caseStudies[0] }) {
 
 export default function CaseStudies() {
   const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
   const total = caseStudies.length;
   const prevIdx = (current - 1 + total) % total;
   const nextIdx = (current + 1) % total;
+
+  const goNext = useCallback(() => setCurrent(i => (i + 1) % total), [total]);
+
+  const handleManual = (fn: () => void) => {
+    setPaused(true);
+    fn();
+    setTimeout(() => setPaused(false), 5000);
+  };
+
+  useEffect(() => {
+    if (paused) return;
+    const id = setInterval(goNext, 4000);
+    return () => clearInterval(id);
+  }, [paused, goNext]);
 
   return (
     <section id="case-studies" className="py-24 bg-gray-900 overflow-hidden">
@@ -129,51 +156,61 @@ export default function CaseStudies() {
         {/* Carousel */}
         <div className="relative flex items-center justify-center" style={{ minHeight: '420px' }}>
 
-          {/* Left card */}
-          <div
-            onClick={() => setCurrent(prevIdx)}
-            className="absolute cursor-pointer transition-all duration-500"
-            style={{
-              width: '38%',
-              right: '62%',
-              top: '50%',
-              transform: 'translateY(-50%) scale(0.82)',
-              opacity: 0.4,
-              zIndex: 1,
-            }}
-          >
-            <StudyCard study={caseStudies[prevIdx]} />
-          </div>
+          {/* Cards — all same size, positioned only via transform */}
+          <div style={{ position: 'relative', width: '100%', minHeight: '420px' }}>
+            {caseStudies.map((study, i) => {
+              const pos = ((i - current) % total + total) % total;
+              const isCenter = pos === 0;
+              const isRight  = pos === 1;
+              const isLeft   = pos === total - 1;
 
-          {/* Center card */}
-          <div
-            className="relative transition-all duration-500"
-            style={{ width: '100%', maxWidth: '560px', zIndex: 2 }}
-          >
-            <div key={current} style={{ animation: 'fadeIn 0.35s ease-out' }}>
-              <StudyCard study={caseStudies[current]} />
-            </div>
-          </div>
+              let transform = 'translate(-50%, -50%) scale(0.82)';
+              let opacity = 0;
+              let zIndex = 0;
 
-          {/* Right card */}
-          <div
-            onClick={() => setCurrent(nextIdx)}
-            className="absolute cursor-pointer transition-all duration-500"
-            style={{
-              width: '38%',
-              left: '62%',
-              top: '50%',
-              transform: 'translateY(-50%) scale(0.82)',
-              opacity: 0.4,
-              zIndex: 1,
-            }}
-          >
-            <StudyCard study={caseStudies[nextIdx]} />
+              if (isCenter) {
+                transform = 'translate(-50%, -50%) scale(1)';
+                opacity = 1;
+                zIndex = 2;
+              } else if (isLeft) {
+                transform = 'translate(-130%, -50%) scale(0.82)';
+                opacity = 0.4;
+                zIndex = 1;
+              } else if (isRight) {
+                transform = 'translate(30%, -50%) scale(0.82)';
+                opacity = 0.4;
+                zIndex = 1;
+              }
+
+              return (
+                <div
+                  key={i}
+                  onClick={() => {
+                    if (isLeft)  handleManual(() => setCurrent(prevIdx));
+                    if (isRight) handleManual(() => setCurrent(nextIdx));
+                  }}
+                  style={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    width: '560px',
+                    transform,
+                    opacity,
+                    zIndex,
+                    transition: 'transform 0.7s ease-in-out, opacity 0.7s ease-in-out',
+                    pointerEvents: isCenter ? 'auto' : 'none',
+                    cursor: (!isCenter && (isLeft || isRight)) ? 'pointer' : 'default',
+                  }}
+                >
+                  <StudyCard study={study} />
+                </div>
+              );
+            })}
           </div>
 
           {/* Arrow left */}
           <button
-            onClick={() => setCurrent(prevIdx)}
+            onClick={() => handleManual(() => setCurrent(prevIdx))}
             className="absolute left-0 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black border border-gray-700 hover:border-[#1DAA6C] text-gray-400 hover:text-[#1DAA6C] flex items-center justify-center transition-all duration-200"
             style={{ zIndex: 3 }}
           >
@@ -182,7 +219,7 @@ export default function CaseStudies() {
 
           {/* Arrow right */}
           <button
-            onClick={() => setCurrent(nextIdx)}
+            onClick={() => handleManual(() => setCurrent(nextIdx))}
             className="absolute right-0 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black border border-gray-700 hover:border-[#1DAA6C] text-gray-400 hover:text-[#1DAA6C] flex items-center justify-center transition-all duration-200"
             style={{ zIndex: 3 }}
           >
@@ -195,7 +232,7 @@ export default function CaseStudies() {
           {caseStudies.map((_, i) => (
             <button
               key={i}
-              onClick={() => setCurrent(i)}
+              onClick={() => handleManual(() => setCurrent(i))}
               style={{
                 width: i === current ? '1.75rem' : '0.6rem',
                 height: '0.6rem',
