@@ -209,7 +209,8 @@ Deno.serve(async (req: Request) => {
 </html>
     `;
 
-    const resendApiKey = 're_CRbrx1oB_LEnvBPoUUJjz3QbENrSCWZ5b';
+    const resendApiKey = Deno.env.get('RESEND_API_KEY');
+    if (!resendApiKey) throw new Error('RESEND_API_KEY is not set');
 
     console.log('📤 Sending email via Resend API...');
 

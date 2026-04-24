@@ -1,4 +1,5 @@
-import { Calendar, Home, TrendingUp, Clock } from 'lucide-react';
+import { useState } from 'react';
+import { Calendar, Home, TrendingUp, Car, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const caseStudies = [
   {
@@ -25,13 +26,95 @@ const caseStudies = [
       { label: 'Manual Work', value: '-80%' },
     ],
   },
+  {
+    company: 'Luz Wash Detailing',
+    icon: Car,
+    challenge: 'No online presence — clients had no way to find services or pricing before calling',
+    solution: 'Professional landing page with services, pricing, WhatsApp booking and mobile-first design',
+    result: 'Online presence established and ready to capture leads 24/7',
+    metrics: [
+      { label: 'Online Presence', value: 'Zero → Live' },
+      { label: 'Pricing & Services', value: 'Online 24/7' },
+      { label: 'Mobile Optimized', value: '100%' },
+    ],
+  },
 ];
 
-export default function CaseStudies() {
+function StudyCard({ study }: { study: typeof caseStudies[0] }) {
   return (
-    <section id="case-studies" className="py-24 bg-gray-900">
+    <div className="bg-black border border-gray-800 rounded-xl overflow-hidden">
+      <div className="p-8">
+        {/* Company header */}
+        <div className="flex items-center gap-4 mb-6">
+          <div className="w-14 h-14 bg-[#1DAA6C]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+            <study.icon className="w-7 h-7 text-[#1DAA6C]" />
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-white">{study.company}</h3>
+            <div className="flex items-center gap-2 text-gray-400 text-sm mt-1">
+              <TrendingUp className="w-4 h-4 text-[#1DAA6C]" />
+              <span>Success Story</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Challenge / Solution / Result */}
+        <div className="space-y-4 mb-6">
+          <div className="flex items-start gap-3">
+            <div className="w-6 h-6 bg-red-500/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+              <span className="text-red-500 text-xs font-bold">!</span>
+            </div>
+            <div>
+              <h4 className="text-sm font-semibold text-gray-400 mb-1">Challenge</h4>
+              <p className="text-white text-sm">{study.challenge}</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <div className="w-6 h-6 bg-blue-500/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+              <span className="text-blue-500 text-xs font-bold">→</span>
+            </div>
+            <div>
+              <h4 className="text-sm font-semibold text-gray-400 mb-1">Solution</h4>
+              <p className="text-white text-sm">{study.solution}</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <div className="w-6 h-6 bg-[#1DAA6C]/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+              <span className="text-[#1DAA6C] text-xs font-bold">✓</span>
+            </div>
+            <div>
+              <h4 className="text-sm font-semibold text-gray-400 mb-1">Result</h4>
+              <p className="text-white text-sm">{study.result}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Metrics */}
+        <div className="grid grid-cols-3 gap-3 pt-5 border-t border-gray-800">
+          {study.metrics.map((metric, idx) => (
+            <div key={idx} className="text-center">
+              <div className="text-xl font-bold text-[#1DAA6C] mb-1">{metric.value}</div>
+              <div className="text-xs text-gray-400">{metric.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function CaseStudies() {
+  const [current, setCurrent] = useState(0);
+  const total = caseStudies.length;
+  const prevIdx = (current - 1 + total) % total;
+  const nextIdx = (current + 1) % total;
+
+  return (
+    <section id="case-studies" className="py-24 bg-gray-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in-up">
+
+        {/* Header */}
+        <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Real Results for{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1DAA6C] to-[#168B57]">
@@ -43,78 +126,97 @@ export default function CaseStudies() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          {caseStudies.map((study, index) => (
-            <div
-              key={index}
-              className="bg-black border border-gray-800 rounded-xl overflow-hidden hover:border-[#1DAA6C] transition-all duration-300 hover:transform hover:scale-[1.02] animate-fade-in-up"
-              style={{ animationDelay: `${index * 200}ms` }}
-            >
-              <div className="p-8">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 bg-[#1DAA6C]/10 rounded-lg flex items-center justify-center">
-                    <study.icon className="w-8 h-8 text-[#1DAA6C]" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white">{study.company}</h3>
-                    <div className="flex items-center gap-2 text-gray-400 text-sm mt-1">
-                      <TrendingUp className="w-4 h-4 text-[#1DAA6C]" />
-                      <span>Success Story</span>
-                    </div>
-                  </div>
-                </div>
+        {/* Carousel */}
+        <div className="relative flex items-center justify-center" style={{ minHeight: '420px' }}>
 
-                <div className="space-y-4 mb-6">
-                  <div>
-                    <div className="flex items-start gap-2 mb-2">
-                      <div className="w-6 h-6 bg-red-500/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-red-500 text-xs font-bold">!</span>
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-semibold text-gray-400 mb-1">Challenge</h4>
-                        <p className="text-white">{study.challenge}</p>
-                      </div>
-                    </div>
-                  </div>
+          {/* Left card */}
+          <div
+            onClick={() => setCurrent(prevIdx)}
+            className="absolute cursor-pointer transition-all duration-500"
+            style={{
+              width: '38%',
+              right: '62%',
+              top: '50%',
+              transform: 'translateY(-50%) scale(0.82)',
+              opacity: 0.4,
+              zIndex: 1,
+            }}
+          >
+            <StudyCard study={caseStudies[prevIdx]} />
+          </div>
 
-                  <div>
-                    <div className="flex items-start gap-2 mb-2">
-                      <div className="w-6 h-6 bg-blue-500/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-blue-500 text-xs font-bold">→</span>
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-semibold text-gray-400 mb-1">Solution</h4>
-                        <p className="text-white">{study.solution}</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="flex items-start gap-2 mb-2">
-                      <div className="w-6 h-6 bg-[#1DAA6C]/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-[#1DAA6C] text-xs font-bold">✓</span>
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-semibold text-gray-400 mb-1">Result</h4>
-                        <p className="text-white">{study.result}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-3 gap-4 pt-6 border-t border-gray-800">
-                  {study.metrics.map((metric, idx) => (
-                    <div key={idx} className="text-center">
-                      <div className="text-2xl font-bold text-[#1DAA6C] mb-1">{metric.value}</div>
-                      <div className="text-xs text-gray-400">{metric.label}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+          {/* Center card */}
+          <div
+            className="relative transition-all duration-500"
+            style={{ width: '100%', maxWidth: '560px', zIndex: 2 }}
+          >
+            <div key={current} style={{ animation: 'fadeIn 0.35s ease-out' }}>
+              <StudyCard study={caseStudies[current]} />
             </div>
+          </div>
+
+          {/* Right card */}
+          <div
+            onClick={() => setCurrent(nextIdx)}
+            className="absolute cursor-pointer transition-all duration-500"
+            style={{
+              width: '38%',
+              left: '62%',
+              top: '50%',
+              transform: 'translateY(-50%) scale(0.82)',
+              opacity: 0.4,
+              zIndex: 1,
+            }}
+          >
+            <StudyCard study={caseStudies[nextIdx]} />
+          </div>
+
+          {/* Arrow left */}
+          <button
+            onClick={() => setCurrent(prevIdx)}
+            className="absolute left-0 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black border border-gray-700 hover:border-[#1DAA6C] text-gray-400 hover:text-[#1DAA6C] flex items-center justify-center transition-all duration-200"
+            style={{ zIndex: 3 }}
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+
+          {/* Arrow right */}
+          <button
+            onClick={() => setCurrent(nextIdx)}
+            className="absolute right-0 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black border border-gray-700 hover:border-[#1DAA6C] text-gray-400 hover:text-[#1DAA6C] flex items-center justify-center transition-all duration-200"
+            style={{ zIndex: 3 }}
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+
+        {/* Dots */}
+        <div className="flex justify-center gap-2 mt-10">
+          {caseStudies.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              style={{
+                width: i === current ? '1.75rem' : '0.6rem',
+                height: '0.6rem',
+                borderRadius: '9999px',
+                border: 'none',
+                backgroundColor: i === current ? '#1DAA6C' : 'rgba(255,255,255,0.25)',
+                cursor: 'pointer',
+                padding: 0,
+                transition: 'all 0.3s ease',
+              }}
+            />
           ))}
         </div>
       </div>
+
+      <style>{`
+        @keyframes fadeIn {
+          from { opacity: 0; transform: scale(0.97); }
+          to   { opacity: 1; transform: scale(1); }
+        }
+      `}</style>
     </section>
   );
 }
