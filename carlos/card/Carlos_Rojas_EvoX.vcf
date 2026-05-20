@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Rojas;Carlos;;;
+FN:Carlos Rojas
+ORG:EvoX Automated Solutions LLC
+TITLE:Founder & CEO
+TEL;TYPE=CELL,VOICE:+13463807938
+EMAIL;TYPE=WORK,INTERNET:admin@evoxautomation.cloud
+URL:https://evoxautomation.cloud
+ADR;TYPE=WORK:;;;Miami;FL;;USA
+NOTE:AI automation and software integration.
+END:VCARD

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#040F18" />
+<title>Carlos Rojas — EvoX Automated Solutions</title>
+<meta name="description" content="Carlos Rojas, Founder & CEO of EvoX Automated Solutions. AI automation and software integration." />
+
+<!-- Open Graph / iMessage preview -->
+<meta property="og:title" content="Carlos Rojas — EvoX Automated Solutions" />
+<meta property="og:description" content="Founder &amp; CEO · admin@evoxautomation.cloud · +1 (346) 380-7938" />
+<meta property="og:type" content="profile" />
+<meta property="og:url" content="https://evoxautomation.cloud/carlos/card" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --evox-black: #0A0E14;
+    --evox-deep: #040F18;
+    --evox-teal: #66CBB0;
+    --evox-teal-deep: #3FA88E;
+    --evox-teal-soft: rgba(102, 203, 176, 0.12);
+    --mist: #B8C2C9;
+    --white: #FFFFFF;
+    --divider: rgba(184, 194, 201, 0.14);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background: var(--evox-deep);
+    color: var(--white);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Ambient teal glow — subtle, refined */
+  body::before {
+    content: "";
+    position: fixed;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80vw;
+    height: 60vw;
+    max-width: 700px;
+    max-height: 500px;
+    background: radial-gradient(closest-side, rgba(102, 203, 176, 0.18), transparent 70%);
+    filter: blur(40px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .card {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    background: linear-gradient(180deg, var(--evox-black) 0%, #0B1218 100%);
+    border: 1px solid var(--divider);
+    border-radius: 24px;
+    padding: 36px 28px 28px;
+    box-shadow:
+      0 30px 80px rgba(0, 0, 0, 0.55),
+      0 0 0 1px rgba(102, 203, 176, 0.06) inset;
+    z-index: 1;
+  }
+
+  .logo {
+    display: block;
+    width: 180px;
+    max-width: 60%;
+    height: auto;
+    margin: 0 auto 28px;
+  }
+
+  .identity {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .name {
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0 0 6px;
+    color: var(--white);
+  }
+
+  .title {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--evox-teal);
+    margin: 0 0 4px;
+  }
+
+  .company {
+    font-size: 13px;
+    color: var(--mist);
+    margin: 0;
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid var(--divider);
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--white);
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, transform 0.05s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .btn:hover {
+    background: rgba(102, 203, 176, 0.06);
+    border-color: rgba(102, 203, 176, 0.35);
+  }
+
+  .btn:active { transform: scale(0.99); }
+
+  .btn .icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: var(--evox-teal);
+  }
+
+  .btn .label {
+    flex: 1;
+    text-align: left;
+  }
+
+  .btn .sublabel {
+    font-size: 12px;
+    color: var(--mist);
+    font-weight: 400;
+  }
+
+  .btn-primary {
+    background: var(--evox-teal);
+    border-color: var(--evox-teal);
+    color: var(--evox-black);
+    font-weight: 600;
+    justify-content: center;
+  }
+
+  .btn-primary .icon { color: var(--evox-black); }
+
+  .btn-primary:hover {
+    background: var(--evox-teal-deep);
+    border-color: var(--evox-teal-deep);
+  }
+
+  .divider {
+    height: 1px;
+    background: var(--divider);
+    margin: 24px 0 20px;
+  }
+
+  .qr-section {
+    text-align: center;
+  }
+
+  .qr-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mist);
+    margin: 0 0 12px;
+  }
+
+  .qr {
+    display: inline-block;
+    width: 132px;
+    height: 132px;
+    padding: 10px;
+    background: var(--white);
+    border-radius: 12px;
+    color: var(--evox-black);
+  }
+
+  .qr svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .footer {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--mist);
+    opacity: 0.7;
+  }
+
+  .footer a { color: inherit; text-decoration: none; }
+
+  @media (max-width: 380px) {
+    .card { padding: 28px 20px 22px; border-radius: 20px; }
+    .name { font-size: 24px; }
+    .logo { margin-bottom: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<main class="card" role="main">
+
+  <!-- EvoX logo (dark-background variant: white "evo" + mint-teal "X") -->
+  <svg class="logo" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 343.18 48" aria-label="EvoX Automated Solutions logo">
+    <g>
+      <!-- e -->
+      <path fill="#FFFFFF" d="M141,229.91c-6.63-4.31-14.11-3.64-21.2-3.84-5.62-.16-11.7,0-17,.26-14.82.78-24.46,11.54-24.46,23.82A23.64,23.64,0,0,0,102.34,274h38.95v-7.91H102.1A15.73,15.73,0,0,1,87,254.82l-.23-.83a.27.27,0,0,1,.27-.34c6.4.51,12.86.52,19.06.51,8.08,0,20.79.33,27.78-.29C147.76,253.14,152.81,237.55,141,229.91ZM133,246c-6.2.42-13.83.33-20.48.29-8.47-.11-16.72.12-25.09-.54a.27.27,0,0,1-.23-.36,17.23,17.23,0,0,1,11.77-10.57,18,18,0,0,1,3.66-.59c6-.4,11.3-.19,17.18-.24,4.61,0,12.7-.13,16.78,2.4,1.4,1.05,3.16,2.3,3.16,4.52C139.72,242.29,139.07,245.56,133,246Z" transform="translate(-78.41 -226)"/>
+      <!-- v -->
+      <path fill="#FFFFFF" d="M248.14,226.3v8h-9.81c-6.69,0-13.16,4.06-16.89,10.59l-13.95,24.43a9.35,9.35,0,0,1-16.23,0c-.57-1-13.77-24.13-14-24.45-3.72-6.52-10.19-10.58-16.89-10.58h-9.8v-8h10.25c9.12,0,18.29,5.73,23.36,14.6l14.81,26a.4.4,0,0,0,.69,0l14.81-26c5.07-8.87,14.24-14.6,23.35-14.6Z" transform="translate(-78.41 -226)"/>
+      <!-- o -->
+      <path fill="#FFFFFF" d="M303.46,226.33H271.38a23.82,23.82,0,1,0,0,47.64h32.08a23.82,23.82,0,0,0,0-47.64Zm0,39.66H271.38a15.91,15.91,0,1,1,0-31.82h32.08a15.91,15.91,0,1,1,0,31.82Z" transform="translate(-78.41 -226)"/>
+      <!-- X (top stroke) -->
+      <path fill="#9BDFC1" d="M421.59,226.26v8h-9.93c-6.88,0-14,2.13-17.61,5.3l-4.82,4.25a5.94,5.94,0,0,1-3.93,1.45H365.69a5.85,5.85,0,0,1-3.92-1.45l-4.83-4.25c-3.58-3.17-10.65-5.3-17.61-5.3H329.4v-8h10.12c8.82,0,17.49,2.8,22.64,7.31l9.58,8.36a5.57,5.57,0,0,0,7.46,0l9.56-8.34c5.15-4.51,13.82-7.31,22.64-7.31Z" transform="translate(-78.41 -226)"/>
+      <!-- X (bottom stroke) -->
+      <path fill="#9BDFC1" d="M421.59,266v8H411.4c-8.82,0-17.49-2.81-22.64-7.31l-9.58-8.36a5.59,5.59,0,0,0-7.44,0l-9.58,8.37c-5.15,4.5-13.82,7.31-22.64,7.31H329.4v-8h9.93c7.22-.13,14.12-2.21,17.61-5.29l4.82-4.25a5.85,5.85,0,0,1,3.93-1.45H385.3a5.84,5.84,0,0,1,3.92,1.45l4.83,4.25c3.56,3.09,10.47,5.16,17.59,5.29Z" transform="translate(-78.41 -226)"/>
+    </g>
+  </svg>
+
+  <!-- Identity -->
+  <header class="identity">
+    <h1 class="name">Carlos Rojas</h1>
+    <p class="title">Founder &amp; CEO</p>
+    <p class="company">EvoX Automated Solutions LLC · Miami, FL</p>
+  </header>
+
+  <!-- Contact actions -->
+  <nav class="actions" aria-label="Contact actions">
+    <a class="btn" href="tel:+13463807938" aria-label="Call Carlos">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+      <span class="label">Call<br><span class="sublabel">+1 (346) 380-7938</span></span>
+    </a>
+
+    <a class="btn" href="mailto:admin@evoxautomation.cloud" aria-label="Email Carlos">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+        <polyline points="22,6 12,13 2,6"/>
+      </svg>
+      <span class="label">Email<br><span class="sublabel">admin@evoxautomation.cloud</span></span>
+    </a>
+
+    <a class="btn" href="https://evoxautomation.cloud" target="_blank" rel="noopener" aria-label="Visit EvoX website">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="2" y1="12" x2="22" y2="12"/>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+      <span class="label">Website<br><span class="sublabel">evoxautomation.cloud</span></span>
+    </a>
+
+    <a class="btn btn-primary" href="Carlos_Rojas_EvoX.vcf" type="text/vcard" aria-label="Save Carlos to contacts">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+        <line x1="20" y1="8" x2="20" y2="14"/>
+        <line x1="23" y1="11" x2="17" y2="11"/>
+      </svg>
+      Save Contact
+    </a>
+  </nav>
+
+  <div class="divider"></div>
+
+  <!-- QR -->
+  <section class="qr-section" aria-label="QR code to this card">
+    <p class="qr-label">Scan to share</p>
+    <div class="qr">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" shape-rendering="crispEdges" aria-hidden="true">
+<path fill="currentColor" d="M2,2h1v1h-1zM3,2h1v1h-1zM4,2h1v1h-1zM5,2h1v1h-1zM6,2h1v1h-1zM7,2h1v1h-1zM8,2h1v1h-1zM10,2h1v1h-1zM14,2h1v1h-1zM18,2h1v1h-1zM19,2h1v1h-1zM20,2h1v1h-1zM21,2h1v1h-1zM24,2h1v1h-1zM25,2h1v1h-1zM26,2h1v1h-1zM27,2h1v1h-1zM28,2h1v1h-1zM29,2h1v1h-1zM30,2h1v1h-1zM2,3h1v1h-1zM8,3h1v1h-1zM10,3h1v1h-1zM12,3h1v1h-1zM13,3h1v1h-1zM14,3h1v1h-1zM15,3h1v1h-1zM16,3h1v1h-1zM18,3h1v1h-1zM20,3h1v1h-1zM22,3h1v1h-1zM24,3h1v1h-1zM30,3h1v1h-1zM2,4h1v1h-1zM4,4h1v1h-1zM5,4h1v1h-1zM6,4h1v1h-1zM8,4h1v1h-1zM12,4h1v1h-1zM15,4h1v1h-1zM16,4h1v1h-1zM17,4h1v1h-1zM22,4h1v1h-1zM24,4h1v1h-1zM26,4h1v1h-1zM27,4h1v1h-1zM28,4h1v1h-1zM30,4h1v1h-1zM2,5h1v1h-1zM4,5h1v1h-1zM5,5h1v1h-1zM6,5h1v1h-1zM8,5h1v1h-1zM10,5h1v1h-1zM11,5h1v1h-1zM14,5h1v1h-1zM15,5h1v1h-1zM16,5h1v1h-1zM19,5h1v1h-1zM21,5h1v1h-1zM24,5h1v1h-1zM26,5h1v1h-1zM27,5h1v1h-1zM28,5h1v1h-1zM30,5h1v1h-1zM2,6h1v1h-1zM4,6h1v1h-1zM5,6h1v1h-1zM6,6h1v1h-1zM8,6h1v1h-1zM11,6h1v1h-1zM12,6h1v1h-1zM13,6h1v1h-1zM14,6h1v1h-1zM16,6h1v1h-1zM17,6h1v1h-1zM19,6h1v1h-1zM21,6h1v1h-1zM24,6h1v1h-1zM26,6h1v1h-1zM27,6h1v1h-1zM28,6h1v1h-1zM30,6h1v1h-1zM2,7h1v1h-1zM8,7h1v1h-1zM11,7h1v1h-1zM12,7h1v1h-1zM14,7h1v1h-1zM15,7h1v1h-1zM19,7h1v1h-1zM21,7h1v1h-1zM22,7h1v1h-1zM24,7h1v1h-1zM30,7h1v1h-1zM2,8h1v1h-1zM3,8h1v1h-1zM4,8h1v1h-1zM5,8h1v1h-1zM6,8h1v1h-1zM7,8h1v1h-1zM8,8h1v1h-1zM10,8h1v1h-1zM12,8h1v1h-1zM14,8h1v1h-1zM16,8h1v1h-1zM18,8h1v1h-1zM20,8h1v1h-1zM22,8h1v1h-1zM24,8h1v1h-1zM25,8h1v1h-1zM26,8h1v1h-1zM27,8h1v1h-1zM28,8h1v1h-1zM29,8h1v1h-1zM30,8h1v1h-1zM10,9h1v1h-1zM13,9h1v1h-1zM17,9h1v1h-1zM19,9h1v1h-1zM20,9h1v1h-1zM21,9h1v1h-1zM2,10h1v1h-1zM4,10h1v1h-1zM5,10h1v1h-1zM7,10h1v1h-1zM8,10h1v1h-1zM9,10h1v1h-1zM11,10h1v1h-1zM12,10h1v1h-1zM13,10h1v1h-1zM14,10h1v1h-1zM16,10h1v1h-1zM19,10h1v1h-1zM20,10h1v1h-1zM24,10h1v1h-1zM27,10h1v1h-1zM29,10h1v1h-1zM30,10h1v1h-1zM2,11h1v1h-1zM3,11h1v1h-1zM4,11h1v1h-1zM5,11h1v1h-1zM11,11h1v1h-1zM12,11h1v1h-1zM14,11h1v1h-1zM16,11h1v1h-1zM18,11h1v1h-1zM19,11h1v1h-1zM20,11h1v1h-1zM21,11h1v1h-1zM22,11h1v1h-1zM23,11h1v1h-1zM24,11h1v1h-1zM25,11h1v1h-1zM26,11h1v1h-1zM30,11h1v1h-1zM4,12h1v1h-1zM6,12h1v1h-1zM7,12h1v1h-1zM8,12h1v1h-1zM11,12h1v1h-1zM15,12h1v1h-1zM16,12h1v1h-1zM18,12h1v1h-1zM19,12h1v1h-1zM20,12h1v1h-1zM25,12h1v1h-1zM28,12h1v1h-1zM29,12h1v1h-1zM3,13h1v1h-1zM6,13h1v1h-1zM7,13h1v1h-1zM15,13h1v1h-1zM17,13h1v1h-1zM21,13h1v1h-1zM23,13h1v1h-1zM24,13h1v1h-1zM26,13h1v1h-1zM30,13h1v1h-1zM2,14h1v1h-1zM3,14h1v1h-1zM6,14h1v1h-1zM8,14h1v1h-1zM9,14h1v1h-1zM10,14h1v1h-1zM12,14h1v1h-1zM13,14h1v1h-1zM14,14h1v1h-1zM15,14h1v1h-1zM16,14h1v1h-1zM19,14h1v1h-1zM21,14h1v1h-1zM25,14h1v1h-1zM27,14h1v1h-1zM28,14h1v1h-1zM2,15h1v1h-1zM5,15h1v1h-1zM9,15h1v1h-1zM10,15h1v1h-1zM11,15h1v1h-1zM16,15h1v1h-1zM17,15h1v1h-1zM18,15h1v1h-1zM21,15h1v1h-1zM23,15h1v1h-1zM24,15h1v1h-1zM28,15h1v1h-1zM29,15h1v1h-1zM30,15h1v1h-1zM3,16h1v1h-1zM4,16h1v1h-1zM5,16h1v1h-1zM7,16h1v1h-1zM8,16h1v1h-1zM9,16h1v1h-1zM10,16h1v1h-1zM12,16h1v1h-1zM15,16h1v1h-1zM16,16h1v1h-1zM18,16h1v1h-1zM19,16h1v1h-1zM20,16h1v1h-1zM21,16h1v1h-1zM23,16h1v1h-1zM24,16h1v1h-1zM25,16h1v1h-1zM26,16h1v1h-1zM28,16h1v1h-1zM29,16h1v1h-1zM30,16h1v1h-1zM4,17h1v1h-1zM6,17h1v1h-1zM7,17h1v1h-1zM9,17h1v1h-1zM10,17h1v1h-1zM11,17h1v1h-1zM12,17h1v1h-1zM13,17h1v1h-1zM14,17h1v1h-1zM17,17h1v1h-1zM18,17h1v1h-1zM22,17h1v1h-1zM25,17h1v1h-1zM29,17h1v1h-1zM4,18h1v1h-1zM6,18h1v1h-1zM7,18h1v1h-1zM8,18h1v1h-1zM9,18h1v1h-1zM10,18h1v1h-1zM11,18h1v1h-1zM14,18h1v1h-1zM16,18h1v1h-1zM17,18h1v1h-1zM20,18h1v1h-1zM23,18h1v1h-1zM25,18h1v1h-1zM26,18h1v1h-1zM27,18h1v1h-1zM29,18h1v1h-1zM3,19h1v1h-1zM6,19h1v1h-1zM7,19h1v1h-1zM9,19h1v1h-1zM10,19h1v1h-1zM12,19h1v1h-1zM14,19h1v1h-1zM17,19h1v1h-1zM20,19h1v1h-1zM22,19h1v1h-1zM23,19h1v1h-1zM25,19h1v1h-1zM27,19h1v1h-1zM28,19h1v1h-1zM29,19h1v1h-1zM2,20h1v1h-1zM5,20h1v1h-1zM7,20h1v1h-1zM8,20h1v1h-1zM9,20h1v1h-1zM10,20h1v1h-1zM12,20h1v1h-1zM14,20h1v1h-1zM15,20h1v1h-1zM16,20h1v1h-1zM17,20h1v1h-1zM22,20h1v1h-1zM28,20h1v1h-1zM4,21h1v1h-1zM5,21h1v1h-1zM6,21h1v1h-1zM9,21h1v1h-1zM11,21h1v1h-1zM14,21h1v1h-1zM15,21h1v1h-1zM16,21h1v1h-1zM17,21h1v1h-1zM19,21h1v1h-1zM20,21h1v1h-1zM22,21h1v1h-1zM28,21h1v1h-1zM3,22h1v1h-1zM6,22h1v1h-1zM8,22h1v1h-1zM9,22h1v1h-1zM11,22h1v1h-1zM12,22h1v1h-1zM15,22h1v1h-1zM16,22h1v1h-1zM19,22h1v1h-1zM20,22h1v1h-1zM21,22h1v1h-1zM22,22h1v1h-1zM23,22h1v1h-1zM24,22h1v1h-1zM25,22h1v1h-1zM26,22h1v1h-1zM27,22h1v1h-1zM28,22h1v1h-1zM10,23h1v1h-1zM12,23h1v1h-1zM14,23h1v1h-1zM18,23h1v1h-1zM20,23h1v1h-1zM22,23h1v1h-1zM26,23h1v1h-1zM27,23h1v1h-1zM28,23h1v1h-1zM29,23h1v1h-1zM30,23h1v1h-1zM2,24h1v1h-1zM3,24h1v1h-1zM4,24h1v1h-1zM5,24h1v1h-1zM6,24h1v1h-1zM7,24h1v1h-1zM8,24h1v1h-1zM10,24h1v1h-1zM16,24h1v1h-1zM18,24h1v1h-1zM19,24h1v1h-1zM20,24h1v1h-1zM21,24h1v1h-1zM22,24h1v1h-1zM24,24h1v1h-1zM26,24h1v1h-1zM27,24h1v1h-1zM29,24h1v1h-1zM2,25h1v1h-1zM8,25h1v1h-1zM10,25h1v1h-1zM11,25h1v1h-1zM13,25h1v1h-1zM14,25h1v1h-1zM15,25h1v1h-1zM16,25h1v1h-1zM18,25h1v1h-1zM22,25h1v1h-1zM26,25h1v1h-1zM27,25h1v1h-1zM30,25h1v1h-1zM2,26h1v1h-1zM4,26h1v1h-1zM5,26h1v1h-1zM6,26h1v1h-1zM8,26h1v1h-1zM11,26h1v1h-1zM17,26h1v1h-1zM19,26h1v1h-1zM20,26h1v1h-1zM22,26h1v1h-1zM23,26h1v1h-1zM24,26h1v1h-1zM25,26h1v1h-1zM26,26h1v1h-1zM28,26h1v1h-1zM29,26h1v1h-1zM30,26h1v1h-1zM2,27h1v1h-1zM4,27h1v1h-1zM5,27h1v1h-1zM6,27h1v1h-1zM8,27h1v1h-1zM10,27h1v1h-1zM12,27h1v1h-1zM17,27h1v1h-1zM18,27h1v1h-1zM21,27h1v1h-1zM22,27h1v1h-1zM23,27h1v1h-1zM26,27h1v1h-1zM27,27h1v1h-1zM30,27h1v1h-1zM2,28h1v1h-1zM4,28h1v1h-1zM5,28h1v1h-1zM6,28h1v1h-1zM8,28h1v1h-1zM10,28h1v1h-1zM11,28h1v1h-1zM12,28h1v1h-1zM14,28h1v1h-1zM16,28h1v1h-1zM19,28h1v1h-1zM20,28h1v1h-1zM22,28h1v1h-1zM25,28h1v1h-1zM28,28h1v1h-1zM30,28h1v1h-1zM2,29h1v1h-1zM8,29h1v1h-1zM11,29h1v1h-1zM13,29h1v1h-1zM16,29h1v1h-1zM22,29h1v1h-1zM24,29h1v1h-1zM25,29h1v1h-1zM26,29h1v1h-1zM27,29h1v1h-1zM29,29h1v1h-1zM2,30h1v1h-1zM3,30h1v1h-1zM4,30h1v1h-1zM5,30h1v1h-1zM6,30h1v1h-1zM7,30h1v1h-1zM8,30h1v1h-1zM10,30h1v1h-1zM13,30h1v1h-1zM14,30h1v1h-1zM20,30h1v1h-1zM21,30h1v1h-1zM22,30h1v1h-1zM23,30h1v1h-1zM24,30h1v1h-1zM29,30h1v1h-1z"/>
+      </svg>
+    </div>
+  </section>
+
+  <p class="footer">&copy; EvoX Automated Solutions LLC · <a href="https://evoxautomation.cloud">evoxautomation.cloud</a></p>
+
+</main>
+
+</body>
+</html>
