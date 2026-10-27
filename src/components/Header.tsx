@@ -30,12 +30,6 @@ export default function Header() {
             >
               Contact
             </a>
-            <a
-              href="tel:3463807938"
-              className="px-6 py-2 bg-[#1DAA6C] hover:bg-[#168B57] text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105"
-            >
-              (346) 380-7938
-            </a>
           </nav>
         </div>
       </div>

@@ -1,30 +1,35 @@
-import { Search, FileText, Code, GraduationCap, HeadphonesIcon } from 'lucide-react';
+import { Phone, Stethoscope, FileText, Code, GraduationCap, HeadphonesIcon } from 'lucide-react';
 
 const steps = [
   {
-    icon: Search,
-    title: 'Free Consultation',
-    description: 'We analyze your current processes and identify automation opportunities',
+    icon: Phone,
+    title: 'Free call',
+    description: 'Tell us your goals, budget and how you work today.',
+  },
+  {
+    icon: Stethoscope,
+    title: 'Diagnosis',
+    description: 'What to fix first, which tools, cost and time.',
   },
   {
     icon: FileText,
-    title: 'Custom Proposal',
-    description: 'Receive a tailored automation strategy designed for your business',
+    title: 'Clear proposal',
+    description: 'Fixed scope and price. No surprises.',
   },
   {
     icon: Code,
-    title: 'Rapid Implementation',
-    description: 'We build and rigorously test your workflows to ensure perfection',
+    title: 'Setup',
+    description: 'We build, connect and test.',
   },
   {
     icon: GraduationCap,
-    title: 'Training & Launch',
-    description: 'Your team gets comprehensive training and support for a smooth transition',
+    title: 'Training',
+    description: 'Your team learns to use it.',
   },
   {
     icon: HeadphonesIcon,
-    title: 'Ongoing Support',
-    description: 'Continuous monitoring and optimization to maximize your ROI',
+    title: 'Ongoing support',
+    description: 'Monthly maintenance and adjustments.',
   },
 ];
 
@@ -40,14 +45,14 @@ export default function HowItWorks() {
             </span>
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            A simple, proven process to transform your business operations
+            Six steps, one point of contact.
           </p>
         </div>
 
         <div className="relative">
           <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-gray-800 to-transparent hidden lg:block"></div>
 
-          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-8 relative">
+          <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-8 relative">
             {steps.map((step, index) => (
               <div
                 key={index}

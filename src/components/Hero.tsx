@@ -24,20 +24,20 @@ export default function Hero({ onCTAClick, onStoriesClick }: HeroProps) {
         <div className="animate-fade-in-up">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 border border-[#1DAA6C]/30 rounded-full mb-8">
             <Sparkles className="w-4 h-4 text-[#1DAA6C]" />
-            <span className="text-sm text-gray-300">Miami's Premier Automation Agency</span>
+            <span className="text-sm text-gray-300">Your technology partner in Miami</span>
           </div>
         </div>
 
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in-up">
-          Automate Your Business,
+          We speak business first.
           <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1DAA6C] to-[#168B57]">
-            Multiply Your Results
+            Technology second.
           </span>
         </h1>
 
         <p className="text-xl sm:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
-          We transform repetitive tasks into intelligent automated workflows
+          One point of contact to choose, set up and connect the tools your business needs, and teach your team to use them.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up animation-delay-400">
@@ -45,7 +45,7 @@ export default function Hero({ onCTAClick, onStoriesClick }: HeroProps) {
             onClick={onCTAClick}
             className="group px-8 py-4 bg-[#1DAA6C] hover:bg-[#168B57] text-black font-semibold rounded-lg transition-all duration-300 flex items-center gap-2 shadow-lg shadow-[#1DAA6C]/20 hover:shadow-[#1DAA6C]/40 hover:scale-105"
           >
-            Schedule Free Consultation
+            Book a free call
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
 

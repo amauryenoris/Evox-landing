@@ -70,14 +70,14 @@ function StudyCard({ study }: { study: typeof caseStudies[0] }) {
           </div>
         </div>
 
-        {/* Challenge / Solution / Result */}
+        {/* Before / What we did / What changed */}
         <div className="space-y-4 mb-6">
           <div className="flex items-start gap-3">
             <div className="w-6 h-6 bg-red-500/10 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
               <span className="text-red-500 text-xs font-bold">!</span>
             </div>
             <div>
-              <h4 className="text-sm font-semibold text-gray-400 mb-1">Challenge</h4>
+              <h4 className="text-sm font-semibold text-gray-400 mb-1">Before</h4>
               <p className="text-white text-sm">{study.challenge}</p>
             </div>
           </div>
@@ -86,7 +86,7 @@ function StudyCard({ study }: { study: typeof caseStudies[0] }) {
               <span className="text-blue-500 text-xs font-bold">→</span>
             </div>
             <div>
-              <h4 className="text-sm font-semibold text-gray-400 mb-1">Solution</h4>
+              <h4 className="text-sm font-semibold text-gray-400 mb-1">What we did</h4>
               <p className="text-white text-sm">{study.solution}</p>
             </div>
           </div>
@@ -95,7 +95,7 @@ function StudyCard({ study }: { study: typeof caseStudies[0] }) {
               <span className="text-[#1DAA6C] text-xs font-bold">✓</span>
             </div>
             <div>
-              <h4 className="text-sm font-semibold text-gray-400 mb-1">Result</h4>
+              <h4 className="text-sm font-semibold text-gray-400 mb-1">What changed</h4>
               <p className="text-white text-sm">{study.result}</p>
             </div>
           </div>
@@ -143,13 +143,13 @@ export default function CaseStudies() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            Real Results for{' '}
+            What changed for{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1DAA6C] to-[#168B57]">
-              Real Businesses
+              our clients
             </span>
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            See how we've helped businesses like yours save time and increase efficiency
+            Real businesses we've worked with.
           </p>
         </div>
 

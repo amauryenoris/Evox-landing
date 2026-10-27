@@ -17,13 +17,13 @@ export default function CTASection({ onBookClick, onMessageClick }: CTASectionPr
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="animate-fade-in-up">
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-            Ready to{' '}
+            Not sure{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1DAA6C] to-[#168B57]">
-              Automate Your Business?
+              what your business needs?
             </span>
           </h2>
           <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
-            Schedule a free 30-minute consultation and discover how much time and money you could save
+            That's what the first call is for: a free one-hour conversation, no jargon, no pressure.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -32,7 +32,7 @@ export default function CTASection({ onBookClick, onMessageClick }: CTASectionPr
               className="group px-8 py-4 bg-[#1DAA6C] hover:bg-[#168B57] text-black font-semibold rounded-lg transition-all duration-300 flex items-center gap-3 shadow-lg shadow-[#1DAA6C]/20 hover:shadow-[#1DAA6C]/40 hover:scale-105"
             >
               <Calendar className="w-5 h-5" />
-              Book Free Consultation
+              Book a free call
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
 
@@ -52,7 +52,7 @@ export default function CTASection({ onBookClick, onMessageClick }: CTASectionPr
                   <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
                 </svg>
               </div>
-              <div className="cta-feature-text">Quick Response</div>
+              <div className="cta-feature-text">One point of contact</div>
             </div>
 
             <div className="cta-feature">
@@ -65,7 +65,7 @@ export default function CTASection({ onBookClick, onMessageClick }: CTASectionPr
                   <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/>
                 </svg>
               </div>
-              <div className="cta-feature-text">Free Consultation</div>
+              <div className="cta-feature-text">Plain language</div>
             </div>
 
             <div className="cta-feature">
@@ -76,7 +76,7 @@ export default function CTASection({ onBookClick, onMessageClick }: CTASectionPr
                   <circle cx="12" cy="12" r="10"/>
                 </svg>
               </div>
-              <div className="cta-feature-text">Custom Solutions</div>
+              <div className="cta-feature-text">Built for your budget</div>
             </div>
           </div>
         </div>

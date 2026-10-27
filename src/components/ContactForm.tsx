@@ -101,13 +101,13 @@ export default function ContactForm() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            Get In{' '}
+            Let's talk about{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1DAA6C] to-[#168B57]">
-              Touch
+              your business
             </span>
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Let's discuss how we can automate your business and drive growth
+            Tell us what's slowing you down. We'll take it from there.
           </p>
         </div>
 
@@ -118,7 +118,7 @@ export default function ContactForm() {
 
               <div className="space-y-6">
                 <a
-                  href="tel:3463807938"
+                  href="tel:5616433909"
                   className="flex items-start gap-4 p-4 bg-gray-900 border border-gray-800 rounded-lg hover:border-[#1DAA6C] transition-all duration-300 group"
                 >
                   <div className="w-12 h-12 bg-[#1DAA6C]/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-[#1DAA6C]/20 transition-colors">
@@ -126,7 +126,7 @@ export default function ContactForm() {
                   </div>
                   <div>
                     <div className="text-sm text-gray-400 mb-1">Phone</div>
-                    <div className="text-white font-semibold">(346) 380-7938</div>
+                    <div className="text-white font-semibold">(561) 643-3909</div>
                   </div>
                 </a>
 
@@ -160,15 +160,19 @@ export default function ContactForm() {
               <ul className="space-y-2 text-gray-400 text-sm">
                 <li className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 bg-[#1DAA6C] rounded-full"></div>
-                  Free 30-minute consultation
+                  Free 1-hour call
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 bg-[#1DAA6C] rounded-full"></div>
-                  Custom automation strategy
+                  A straight answer on what you need
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 bg-[#1DAA6C] rounded-full"></div>
                   No obligation, no pressure
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 bg-[#1DAA6C] rounded-full"></div>
+                  English or Spanish
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 bg-[#1DAA6C] rounded-full"></div>
@@ -300,7 +304,7 @@ export default function ContactForm() {
                   className={`w-full px-4 py-3 bg-black border ${
                     errors.message ? 'border-red-500' : 'border-gray-700'
                   } rounded-lg text-white focus:outline-none focus:border-[#1DAA6C] transition-colors resize-none`}
-                  placeholder="Tell us about your automation needs..."
+                  placeholder="What takes up most of your time?"
                 />
                 <div className="flex justify-between items-center mt-1">
                   {errors.message ? (

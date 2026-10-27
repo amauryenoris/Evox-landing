@@ -51,7 +51,7 @@ export default function FloatingCTA({ onClick }: FloatingCTAProps) {
           className="px-6 py-4 bg-[#1DAA6C] hover:bg-[#168B57] text-black font-semibold rounded-full shadow-2xl hover:shadow-[#1DAA6C]/40 transition-all duration-300 flex items-center gap-3 hover:scale-105"
         >
           <Calendar className="w-5 h-5" />
-          Get Free Consultation
+          Book a free call
         </button>
 
         <div className="absolute inset-0 bg-[#1DAA6C] rounded-full blur-xl opacity-30 -z-10 animate-pulse"></div>

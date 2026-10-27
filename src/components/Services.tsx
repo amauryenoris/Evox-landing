@@ -1,30 +1,35 @@
-import { Mail, MessageCircle, Network, Workflow, Shield } from 'lucide-react';
+import { Globe, Bot, Network, Compass, Users, Megaphone } from 'lucide-react';
 
 const services = [
   {
-    icon: Mail,
-    title: 'Email Workflow Automation',
-    description: 'Automate email processing, responses, and data extraction',
+    icon: Globe,
+    title: 'Websites & landing pages',
+    description: 'Get found, show your prices, get contacted.',
   },
   {
-    icon: MessageCircle,
-    title: 'Intelligent Chatbots',
-    description: 'AI-powered chatbots with persistent memory using PostgreSQL',
+    icon: Bot,
+    title: 'AI phone & chat agents',
+    description: 'Calls and messages answered, even after hours.',
   },
   {
     icon: Network,
-    title: 'Custom Integrations',
-    description: 'Connect your tools: CRM, spreadsheets, calendars, databases',
+    title: 'Connected tools',
+    description: 'Your calendar, email, forms and sheets working together.',
   },
   {
-    icon: Workflow,
-    title: 'Process Optimization',
-    description: 'Streamline operations from lead capture to customer service',
+    icon: Compass,
+    title: 'Business diagnosis',
+    description: 'We tell you what to fix first, with what, and what it costs.',
   },
   {
-    icon: Shield,
-    title: '24/7 Monitoring & Support',
-    description: 'Round-the-clock support ensuring automations run smoothly',
+    icon: Users,
+    title: 'CRM & follow-ups',
+    description: 'Every lead tracked, every follow-up on time.',
+  },
+  {
+    icon: Megaphone,
+    title: 'Google & Meta ads',
+    description: 'Ads that feed straight into your follow-up.',
   },
 ];
 
@@ -34,13 +39,13 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            Automation Solutions That{' '}
+            What we{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1DAA6C] to-[#168B57]">
-              Scale Your Business
+              set up for you
             </span>
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Comprehensive automation services designed to increase efficiency and drive growth
+            Simple, affordable tools chosen for your business.
           </p>
         </div>
 

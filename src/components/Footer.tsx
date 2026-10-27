@@ -20,12 +20,12 @@ export default function Footer({ onNavigate }: FooterProps) {
               />
             </div>
             <p className="text-gray-400 text-sm mb-4 max-w-md">
-              Miami's premier business automation agency. We transform repetitive tasks into intelligent automated workflows.
+              Your technology partner in Miami. One point of contact to choose, set up and connect the tools your business needs.
             </p>
             <div className="flex flex-col gap-2 text-sm">
-              <a href="tel:3463807938" className="text-gray-400 hover:text-[#1DAA6C] transition-colors flex items-center gap-2">
+              <a href="tel:5616433909" className="text-gray-400 hover:text-[#1DAA6C] transition-colors flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                (346) 380-7938
+                (561) 643-3909
               </a>
               <a href="mailto:admin@evoxautomation.cloud" className="text-gray-400 hover:text-[#1DAA6C] transition-colors flex items-center gap-2">
                 <Mail className="w-4 h-4" />

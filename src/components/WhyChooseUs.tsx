@@ -1,25 +1,25 @@
-import { Clock, Zap, Award, TrendingUp } from 'lucide-react';
+import { Ear, Users, MessageSquareText, HeartHandshake } from 'lucide-react';
 
 const benefits = [
   {
-    icon: Clock,
-    title: '24/7 Availability & Support',
-    description: 'Round-the-clock monitoring and support to ensure your automations never miss a beat',
+    icon: Ear,
+    title: 'We listen first',
+    description: 'We learn your business before we touch any tool.',
   },
   {
-    icon: Zap,
-    title: 'Rapid Implementation',
-    description: 'Fast turnaround times to get your automations up and running quickly',
+    icon: Users,
+    title: 'One point of contact',
+    description: 'You talk to us; we handle the tech and the specialists.',
   },
   {
-    icon: Award,
-    title: 'Proven Track Record',
-    description: 'Successfully deployed 100+ workflows for satisfied clients across industries',
+    icon: MessageSquareText,
+    title: 'Plain language',
+    description: "You'll always know what you're paying for and why.",
   },
   {
-    icon: TrendingUp,
-    title: 'Scalable Solutions',
-    description: 'Automation systems that grow with your business needs',
+    icon: HeartHandshake,
+    title: 'We stay',
+    description: 'Training for your team and support after launch.',
   },
 ];
 
@@ -35,7 +35,7 @@ export default function WhyChooseUs() {
             </span>
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            We're committed to delivering exceptional automation solutions that transform your business
+            We handle the technology so you can run your business.
           </p>
         </div>
 
